@@ -20,7 +20,8 @@
  *   ────────────────────────────────────────────────────────────────────────────────────────────
  *   §1: Persistent comment for documenting general DAESA styling section of stylesheet........28
  *   §2: Global Less variables and Less MIXINS/utility classes.................................73
- *   §3: Import modular rules for displaying EMBEDDED CONTENT..................................79
+ *   §3: Import modular rules for fixing issues................................................79
+ *   §4: Embedded content rules................................................................79
  *  ────────────────────────────────────────────────────────────────────────────────────────────────
  */
 
@@ -48,7 +49,7 @@
  *
  *  Please refer to the linked GitHub project for fully documented, precompiled source code.
  *
- *  @version 0.0.1
+ *  @version 0.1.0
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS-WDS/blob/main/cust-ss-ed-src_bld-entry-
  *    pt.less
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
@@ -76,7 +77,13 @@
 @import "Mixins/decl-opt-dsgn.less";
 
 /** ================================================================================================
- *  §3: Import modular rules for displaying EMBEDDED CONTENT
+ *  §3: Import modular rules for fixing issues
+ */
+
+@import "Issue-Fixes/wsu-vert-prinav.less";
+
+/** ================================================================================================
+ *  §4: Embedded content rules
  */
 
 @import "Embeds/mailchimp-email-embeds.less";
