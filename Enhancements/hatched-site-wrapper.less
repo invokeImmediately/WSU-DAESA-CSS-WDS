@@ -1,0 +1,70 @@
+/**=================================================================================================
+ * █  █ ▄▀▀▄▐▀█▀▌▄▀▀▀ █  █ █▀▀▀ █▀▀▄    ▄▀▀▀ ▀█▀▐▀█▀▌█▀▀▀   ▐   ▌█▀▀▄ ▄▀▀▄ █▀▀▄
+ * █▀▀█ █▄▄█  █  █    █▀▀█ █▀▀  █  █ ▀▀ ▀▀▀█  █   █  █▀▀  ▀▀▐ █ ▌█▄▄▀ █▄▄█ █▄▄▀  ▀
+ * █  ▀ █  ▀  █   ▀▀▀ █  ▀ ▀▀▀▀ ▀▀▀     ▀▀▀  ▀▀▀  █  ▀▀▀▀    ▀ ▀ ▀  ▀▄█  ▀ █
+ *
+ *      █▀▀▄ █▀▀▀ █▀▀▄    █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *    ▀ █▄▄▀ █▀▀  █▄▄▀    █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *      █    ▀▀▀▀ ▀  ▀▄ ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ *
+ * Modular ruleset that fixes some design issues with WSU Global Headers in the WSUWP WDS.
+ *
+ * @version 0.0.0
+ * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * @link https://github.com/invokeImmediately/blob/main/Enhancements/hatched-site-wrapper.less
+ * @license MIT Copyright (c) 2022 Daniel C. Rieck.
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *     and associated documentation files (the "Software"), to deal in the Software without
+ *     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+ *     Software is furnished to do so, subject to the following conditions:
+ *   The above copyright notice and this permission notice shall be included in all copies or
+ *     substantial portions of the Software.
+ *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ *     DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * =================================================================================================
+ */
+
+@hatched-site-wrapper-enh: {
+
+  /*! —» Issue fixes for WSU content wrapper «— */
+
+  @media screen and (min-width: 91rem) {
+    .wsu-wrapper-site {
+      background-image: repeating-linear-gradient(-45deg, #f2f2f2 0, white 1px, white 8px, #f2f2f2 9px, #f2f2f2 10px);
+    }
+
+    .wsu-wrapper-content {
+      background: white;
+      border-left: 1px solid #e7e7e7;
+      border-right: 1px solid #e7e7e7;
+    }
+
+    .wsu-hero:after {
+      left: calc(((100vw - 1200px) - 278px) / 2);
+      right: calc(((100vw - 1200px) - 278px) / 2);
+    }
+
+    .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-hero:after {
+      left: calc(((100vw - 1200px) - 58px) / 2);
+      right: calc(((100vw - 1200px) - 58px) / 2);
+    }
+
+    .wsu-hero .wsu-image-frame {
+      background-color: transparent;
+    }
+
+    .wsu-hero .wsu-image-frame img {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 83.3333%, calc(100% - ((100vw - 1200px) - 277px) / 2) 83.3333%, calc(100% - ((100vw - 1200px) - 277px) / 2) 100%, calc(((100vw - 1200px) - 277px) / 2) 100%, calc(((100vw - 1200px) - 277px) / 2) 83.3333%, 0% 83.3333%);
+    }
+
+    .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-hero .wsu-image-frame img {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 83.3333%, calc(100% - ((100vw - 1200px) - 59px) / 2) 83.3333%, calc(100% - ((100vw - 1200px) - 59px) / 2) 100%, calc(((100vw - 1200px) - 57px) / 2) 100%, calc(((100vw - 1200px) - 57px) / 2) 83.3333%, 0% 83.3333%);
+    }
+  }
+};
+
+.decl-mdlr-dsgn( @hatched-site-wrapper-enh, @use-dsgn__hatched-site-wrapper-enh );

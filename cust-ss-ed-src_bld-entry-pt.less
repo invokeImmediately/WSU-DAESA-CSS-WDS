@@ -18,10 +18,11 @@
  * ─────────────────────────────────────────────────────────────────────────────────────────────────
  *  TABLE OF CONTENTS:
  *  ──────────────────────────────────────────────────────────────────────────────────────────────
- *  §1: Persistent comment for documenting general DAESA styling section of stylesheet..........29
+ *  §1: Persistent comment for documenting general DAESA styling section of stylesheet..........30
  *  §2: Global Less variables and Less MIXINS/utility classes...................................74
  *  §3: Import modular rules for fixing issues..................................................80
- *  §4: Embedded content rules..................................................................87
+ *  §4: Enhancements............................................................................88
+ *  §5: Embedded content rules..................................................................94
  * ─────────────────────────────────────────────────────────────────────────────────────────────────
  */
 
@@ -49,7 +50,7 @@
  *
  * Please refer to the linked GitHub project for fully documented, precompiled source code.
  *
- * @version 0.2.1
+ * @version 0.3.0
  * @link https://github.com/invokeImmediately/WSU-DAESA-CSS-WDS/blob/main/cust-ss-ed-src_bld-entry-p
  *   t.less
  * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
@@ -84,7 +85,13 @@
 @import "Issue-Fixes/wsu-wrapper-content.less";
 
 /**=================================================================================================
- * §4: Embedded content rules
+ * §4: Enhancements
+ */
+
+@import "Enhancements/hatched-site-wrapper.less";
+
+/**=================================================================================================
+ * §5: Embedded content rules
  */
 
 @import "Embeds/mailchimp-email-embeds.less";
