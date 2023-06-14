@@ -11,7 +11,9 @@ The style rules written for this project are organized into folders and Less mod
 
 - Fix a (typically minor) technical or design issue that remains unaddressed in the stylesheets packaged with the WDS theme.
 - Impart an enhancment to the default layout or presentation of a WDS element, component, or module.
-- Provide a customization whereby a novel element, component, or module not included in the WDS can be presented on a WDS themed website hosted on WSU WordPress.
+- Provide a customization whereby:
+  - An existing WDS element, component, or module can be presented in a significantly different and novel manner.
+  - A novel element, component, module, or assembly of WordPress Gutenberg blocks not included in the WDS can be presented on a WDS themed website hosted on WSU WordPress.
 - Extend WDS stylesheets with additional utility classes.
 
 By using this approach, modules can quickly be dropped or added when building a CSS stylesheet for deployment to a website. This enables the custom code from this project to be easily adapted in response to ongoing changes to the WDS theme as it continues to be developed and evolve.
