@@ -1,58 +1,98 @@
-/**─────────────────────────────────────────────────────────────────────────────
- * ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌   ▄▀▀▀ ▄▀▀▀    █▀▀▀ █▀▀▄ -src_bld-entry-pt.less · · · · ·
- * █    █  █ ▀▀▀█  █  ▀▀ ▀▀▀█ ▀▀▀█ ▀▀ █▀▀  █  █ · · · · · · · · · · · · · · · ·
- *  ▀▀▀  ▀▀  ▀▀▀   █     ▀▀▀  ▀▀▀     ▀▀▀▀ ▀▀▀ · · · · · · · · · · · · · · · · ·
+/**
+ * ▓▓▓░ BUILD ENTRY POINTS ░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+ * ▓▓▒░ ──────────────────────────── ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+ * ▓▓▒░ Cust- ▄▀▀▀ ▄▀▀▀    █▀▀▀ █▀▀▄ ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
+ * ▓▒▒░ ───── ▀▀▀█ ▀▀▀█ ▀▀ █▀▀  █  █ ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
+ * ▓▒░░░░░░░░ ▀▀▀  ▀▀▀     ▀▀▀▀ ▀▀▀  -src_bld-entry-pt.less ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓
  *
- * Entry point for including dependencies utilized in building custom stylesheets that are common to all websites designed, built, and maintained by the Division of Academic Engagement and Student Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
+ * Entry point for including dependencies utilized in building custom style
+ *  sheets that are common to all websites designed, built, and maintained by
+ *  the Division of Academic Engagement and Student Achievement (DAESA) in the
+ *  Office of the Provost at Washington State University (WSU).
  *
  * See §1 for a full description of the contents of this file.
  *
- * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- * @license MIT — Copyright (c) 2023 Washington State University. (See §1 for full license.)
+ * @author Daniel Rieck
+ *  [daniel.rieck@wsu.edu]
+ *  (https://github.com/invokeImmediately)
+ *
+ * @license MIT — Copyright (c) 2023 Washington State University. (See §1 for
+ *  full license.)
  * ─────────────────────────────────────────────────────────────────────────────
  *  TABLE OF CONTENTS:
  *  ──────────────────────────────────────────────────────────────────────────
- *  §1: Persistent comment for documentation in output......................30
- *  §2: Global Less variables and Less MIXINS/utility classes...............74
- *  §3: Import modular rules for fixing issues..............................80
- *  §4: Enhancements........................................................89
- *  §5: Embedded content rules..............................................95
+ *  §1: Persistent comment for documentation in output......................35
+ *  §2: Global Less variables and Less MIXINS/utility classes...............88
+ *  §3: Import Modular Rules for Fixing Issues..............................95
+ *  §4: Rule Sets for Making Enhancements..................................105
+ *  §5: Rule Sets for Including Customizations.............................112
+ *  §6: Rule Sets for Presenting Embedded Content..........................117
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-/**=============================================================================
- * §1: Persistent comment for documenting general DAESA styling section of stylesheet
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §1: Persistent comment for documenting general DAESA styling section of
+ *      stylesheet
  */
 
-/*!=============================================================================
- * ▐   ▌█▀▀▄ ▄▀▀▀   ▐▀█▀▌█  █ █▀▀▀ ▐▀▄▀▌█▀▀▀ Customizations · · · · · · · · · ·
- * ▐ █ ▌█  █ ▀▀▀█     █  █▀▀█ █▀▀  █ ▀ ▌█▀▀  · · · · · · · · · · · · · · · · · ·
- *  ▀ ▀ ▀▀▀  ▀▀▀      █  █  ▀ ▀▀▀▀ █   ▀▀▀▀▀  · · · · · · · · · · · · · · · · ·
- * =============================================================================
- * The following section of this stylesheet contains CSS code written for use on all websites designed, built, and maintained by the Division of Academic Engagement and Student Achievement (DAESA) in the Office of the Provost at Washington State University (WSU).
+/*!
+ * ▓▓▓░▐   ▌█▀▀▄ ▄▀▀▀   ▐▀█▀▌█  █ █▀▀▀ ▐▀▄▀▌█▀▀▀ ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+ * ▓▓▒░▐ █ ▌█  █ ▀▀▀█     █  █▀▀█ █▀▀  █ ▀ ▌█▀▀  ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
+ * ▓▒▒░ ▀ ▀ ▀▀▀  ▀▀▀      █  █  ▀ ▀▀▀▀ █   ▀▀▀▀▀ Customizations ░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓
  *
- * The CSS code in this section was designed to enhance to the styling associated with the [Web Design System 2.0 theme](https://github.com/wsuwebteam/wsuwp-theme-web-design-system-two). It was generated from precompiled CSS written in the Less language extension of CSS. It is intended to be applied via the WSUWP CSS Stylesheet Editor functioning in add-on mode.
+ * The following section of this stylesheet contains CSS code written for use on
+ *  all websites designed, built, and maintained by the Division of Academic
+ *  Engagement and Student Achievement (DAESA) in the Office of the Provost at
+ *  Washington State University (WSU).
  *
- * Please refer to the linked GitHub project for fully documented, precompiled source code.
+ * The CSS code in this section was designed to enhance to the styling
+ *  associated with the [Web Design System 2.0 theme](https://github.com/wsuwebt
+ *  eam/wsuwp-theme-web-design-system-two). It was generated from precompiled
+ *  CSS written in the Less language extension of CSS. It is intended to be
+ *  applied via the WSUWP CSS Stylesheet Editor functioning in add-on mode.
+ *
+ * Please refer to the linked GitHub project for fully documented, precompiled
+ *  source code.
  *
  * @version 0.3.0
- * @link https://github.com/invokeImmediately/WSU-DAESA-CSS-WDS/blob/main/cust-ss-ed-src_bld-entry-pt.less
- * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *
+ * @author Daniel Rieck
+ *  [daniel.rieck@wsu.edu]
+ *  (https://github.com/invokeImmediately)
+ *
+ * @link https://github.com/invokeImmediately/WSU-DAESA-CSS-WDS/blob/main/cust-s
+ *  s-ed-src_bld-entry-pt.less
+ *
  * @license MIT Copyright (c) 2023 Washington State University
- *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- *   The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * =============================================================================
+ *  Permission is hereby granted, free of charge, to any person obtaining a
+ *   copy of this software and associated documentation files
+ *   (the "Software"), to deal in the Software without restriction, including
+ *   without limitation the rights to use, copy, modify, merge, publish,
+ *   distribute, sublicense, and/or sell copies of the Software, and to permit
+ *   persons to whom the Software is furnished to do so, subject to the
+ *   following conditions:
+ *  The above copyright notice and this permission notice shall be included in
+ *   all copies or substantial portions of the Software.
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ *   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ *   DEALINGS IN THE SOFTWARE.
  */
 
-/**=============================================================================
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
  * §2: Global Less variables and Less MIXINS/utility classes
  */
 
 @import "Mixins/decl-opt-dsgn.less";
 
-/**=============================================================================
- * §3: Import modular rules for fixing issues
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §3: Import Modular Rules for Fixing Issues
  */
 
 @import "Issue-Fixes/lists.less";
@@ -60,14 +100,23 @@
 @import "Issue-Fixes/wsu-vert-prinav.less";
 @import "Issue-Fixes/wsu-wrapper-content.less";
 
-/**=============================================================================
- * §4: Enhancements
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §4: Import Modular Rule Sets for Making Enhancements
  */
 
 @import "Enhancements/hatched-site-wrapper.less";
 
-/**=============================================================================
- * §5: Embedded content rules
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §5: Import Modular Rule Sets for Including Customizations
+ */
+
+@import "Customizations/gravity-forms-assemblies.cust8ns.less";
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §6: Import Modular Rule Sets for Presenting Embedded Content
  */
 
 @import "Embeds/mailchimp-email-embeds.less";

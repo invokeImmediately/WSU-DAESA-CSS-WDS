@@ -1,0 +1,232 @@
+/**
+ * ▓▓▓░ CUSTOMIZATIONS ░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+ * ▓▓▒░ ─────────────────────────────── ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓
+ * ▓▓▒░ █▀▀▀ █▀▀▄ ▄▀▀▄▐   ▌▀█▀▐▀█▀▌█  █ ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
+ * ▓▒▒░ █ ▀▄ █▄▄▀ █▄▄█ █ █  █   █  ▀▄▄█ ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
+ * ▓▒░░ ▀▀▀▀ ▀  ▀▄█  ▀  █  ▀▀▀  █  ▄▄▄▀ -forms-assemblies.cust8ns.less ▒▒▒▒▒▒▓▓▓
+ *
+ * Modular styling designs for Gravity Forms block assemblies that can be
+ *  included by option when building custom style sheets for websites running
+ *  the Washington State University (WSU) Web Design System (WDS) theme for
+ *  WordPress.
+ *
+ * @version 0.0.0
+ *
+ * @author Daniel Rieck
+ *  [daniel.rieck@wsu.edu]
+ *  (https://github.com/invokeImmediately)
+ *
+ * @link https://github.com/invokeImmediately/blob/main/Customizations/gravity-f
+ *  orms-assemblies.cust8ns.less
+ *
+ * @license MIT Copyright (c) 2023 Washington State University.
+ *  Permission is hereby granted, free of charge, to any person obtaining a
+ *   copy of this software and associated documentation files
+ *   (the "Software"), to deal in the Software without restriction, including
+ *   without limitation the rights to use, copy, modify, merge, publish,
+ *   distribute, sublicense, and/or sell copies of the Software, and to permit
+ *   persons to whom the Software is furnished to do so, subject to the
+ *   following conditions:
+ *  The above copyright notice and this permission notice shall be included in
+ *   all copies or substantial portions of the Software.
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ *   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ *   DEALINGS IN THE SOFTWARE.
+ * ─────────────────────────────────────────────────────────────────────────────
+ *  TABLE OF CONTENTS:
+ *  ──────────────────────────────────────────────────────────────────────────
+ *  §1: DAESA-Style Gravity Forms Rule Set..................................48
+ *  §2: Gravity Forms Progress Indicators Rule Set..........................59
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §1: DAESA-Style Gravity Forms Rule Set
+ */
+
+@daesa-style-gf-cust8n: {
+
+  /*! —» Customization: WDS Gravity Forms Assemblies → DAESA styled forms «— */
+  .gform_wrapper {
+    &.gravity-theme {
+      .gf_page_steps {
+        background-color: #f7f7f7;
+        margin-bottom: 0;
+        padding: .5rem 1rem .25rem;
+
+        & + .gform_body {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }    
+
+      .gform_body {
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        box-shadow: 0 0 3px rgb(0 0 0 / 15%) inset,
+          2px 2px 6px rgb(0 0 0 / 5%) inset,
+          -2px 2px 6px rgb(0 0 0 / 5%) inset;
+        padding: 2rem;
+      }
+
+      .gfield_html:not(.gfield_html--for-indicator) {
+        background: #fff;
+        border-radius: .3125rem;
+        padding: 2rem;
+      }
+
+      .gpnf-nested-entries {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .gform_confirmation_wrapper table table {
+    border-top: 0;
+    margin-bottom: 0;
+
+    tr:first-child td {
+      background-color: #fff !important;
+    }
+
+    td:not([colspan]):first-child {
+      border-right: 0;
+    }
+
+    td:not([colspan]):last-child {
+      border-left: 0;
+    }
+
+    td:not([colspan]) ul {
+      margin: .875em 0 0;
+    }
+  }
+};
+
+.declare-design-by-option(
+  @daesa-style-gf-cust8n,
+  @use-design__daesa-style-gf-cust8n
+);
+
+/**
+ * ─────────────────────────────────────────────────────────────────────────────
+ * §2: Gravity Forms Progress Indicators Rule Set
+ */
+
+@gf-progress-ind5r-cust8n: {
+
+  /*! —» Customization: WDS Gravity Forms → DAESA styled progress indicators «— */
+  .progress-indicator {
+    align-items: center;
+    border-top: 1px dotted #ccc;
+    display: flex;
+    font-size: .925em;
+    justify-content: center;
+    margin-bottom: 0;
+    list-style-type: none;
+    position: relative;
+
+    @media screen and (max-width: 875px) {
+      flex-wrap: wrap;
+    }
+
+    &::before {
+      color: #5e5e5e;
+      content: "Application Progress:";
+      position: absolute;
+      left: 0;
+      text-transform: uppercase;
+      top: .3em;
+    }
+
+    ol& li {
+      list-style-type: none;
+    }
+
+    .gform_wrapper.gravity-theme & {
+      max-width: none;
+      padding-top: 3rem;
+    }
+
+    body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol&,
+    body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol& {
+      list-style-type: none !important;
+      margin-bottom: 0;
+      margin-left: 0;
+      padding-top: 2.3em;
+    }
+
+    body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol& li,
+    body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol& li {
+      list-style-type: none !important;
+    }
+
+    &__l-connector,
+    &__r-connector {
+      background-color: #e5e6e8;
+      position: absolute;
+      height: .3125rem;
+      top: 50%;
+      width: 1rem;
+    }
+
+    &__section-complete &__l-connector,
+    &__section-complete &__r-connector {
+      background-color: #981e32;
+    }
+
+    &__l-connector {
+      left: 0;
+      transform: translate(-100%,-50%);
+    }
+
+    &__section-active &__l-connector {
+      background-color: #981e32;
+    }
+
+    &__r-connector {
+      right: 0;
+      transform: translate(100%,-50%);
+    }
+
+    &__section {
+      background-color: #e5e6e8;
+      border-radius: .25em;
+      color: black;
+      padding: .5em 1em;
+      position: relative;
+      text-align: center;
+    }
+
+    .gform_wrapper.gravity-theme &__section {
+      margin-right: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol &__section,
+    body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol &__section {
+      margin-right: 18px;
+      padding: .5em 1em;
+    }
+
+    &__section-active {
+      background-color: #58111d;
+      color: white;
+    }
+
+    &__section-complete {
+      background-color: #981e32;
+      color: white;
+    }
+  }
+};
+
+.declare-design-by-option(
+  @gf-progress-ind5r-cust8n,
+  @use-design__gf-progress-ind5r-cust8n
+);
